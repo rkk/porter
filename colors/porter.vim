@@ -16,6 +16,13 @@ let g:colors_name = "porter"
 " RESET COLORS AND FORMATTING
 "
 
+hi clear Identifier
+hi clear Normal
+hi clear Constant
+hi clear Operator
+hi clear Statement
+hi clear Comment
+
 hi!  Comment       term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
 hi!  Constant      term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
 hi!  Special       term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
@@ -73,7 +80,6 @@ hi! texSpecialChar term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  
 hi! texInputFile   term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
 hi! texRefZone     term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
 hi! Delimiter      term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
-hi! Special        term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=NONE  guibg=NONE
 
 
 "
@@ -81,21 +87,29 @@ hi! Special        term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  
 "
 
 hi! Normal         ctermfg=238   ctermbg=NONE   cterm=underline
-hi! Visual         ctermfg=238   ctermbg=220    cterm=NONE
+hi! Visual         ctermfg=NONE   ctermbg=NONE    cterm=NONE gui=NONE guifg=NONE guibg=#ffeb16
 hi! NonText        ctermfg=07    ctermbg=NONE   cterm=NONE
 hi! Comment        ctermfg=14    ctermbg=NONE   cterm=NONE
-hi! StatusLine     ctermfg=238   ctermbg=NONE   cterm=underline
-hi! StatusLineNC   ctermfg=238   ctermbg=NONE   cterm=underline
+hi! StatusLine     ctermfg=NONE   ctermbg=NONE   cterm=reverse guibg=#b24d79 guifg=#f0f0f0
+hi! StatusLineNC   ctermfg=NONE   ctermbg=NONE   cterm=underline gui=none guibg=#afb2c3
 hi! VertSplit      ctermfg=NONE  ctermbg=NONE   cterm=NONE
 hi! Search         ctermfg=238   ctermbg=220    cterm=NONE
-hi! IncSearch      ctermfg=238   ctermbg=220    cterm=NONE
-hi! MatchParen     cterm=NONE    ctermbg=NONE   cterm=underline
+hi! IncSearch      ctermfg=NONE   ctermbg=NONE    cterm=NONE guibg=#ffeb16
+hi! MatchParen     cterm=NONE    ctermbg=NONE   cterm=NONE term=NONE gui=NONE guifg=NONE guibg=#ffeb16
 hi! Pmenu          cterm=NONE    ctermbg=NONE   cterm=Underline
+hi!  ColorColumn   term=NONE  cterm=NONE  ctermfg=NONE  ctermbg=NONE  gui=NONE  guifg=red  guibg=NONE
 
 hi! link           TabLine       StatusLineNC
 hi! link           TabLineFill   StatusLineNC
 hi! link           SignColumn    LineNr
 
+"
+" HACKS
+"
+hi clear goTypeName
+hi clear goFunction
+hi clear htmlItalic
+ 
 
 "
 " TO BE STYLED
